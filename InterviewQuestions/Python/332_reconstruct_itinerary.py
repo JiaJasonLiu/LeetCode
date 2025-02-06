@@ -32,3 +32,22 @@ class Solution:
         result.append(first)
 
         return result[::-1]
+
+# IMPROVEMENT
+
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        a = defaultdict(list)
+        
+        for f, t in sorted(tickets):
+            a[f].append(t)
+        
+        result = []
+        def dfs(node):
+            while a[node]:
+                dfs(a[node].pop(0))
+            result.append(node)
+        
+        dfs("JFK")
+
+        return result[::-1]
