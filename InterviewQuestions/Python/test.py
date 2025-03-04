@@ -1,8 +1,3 @@
-def test():
-    testing = "testing inside"
-    # can test inside 
-    def in_test():
-        print(testing)
-    in_test()
-
-test()
+temp_rank, rank = 1, 2
+rank, temp_rank = temp_rank, rank
+print(rank, temp_rank)
